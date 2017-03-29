@@ -1,0 +1,24 @@
+body {
+  background: linear-gradient(#ff844c, #ff2121);
+  text-align: center;
+  height: 1000px;
+  color: white;
+  font-family: 'Fascinate Inline', cursive;
+
+}
+
+.welcome__text > h1 {
+  font-size: 4em;
+}
+
+.pizza__img {
+  margin: 5%;
+  height: 300px;
+}
+
+
+@media (max-width: 600px) {
+  .pizza__img {
+    height: 200px;
+  }
+}
