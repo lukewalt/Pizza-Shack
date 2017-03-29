@@ -1,0 +1,26 @@
+{
+  "name": "order-app",
+  "version": "1.0.0",
+  "description": "Ordering app for people who wish to order items",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js",
+    "deploy": "git push heroku master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukewalt/order-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lukewalt/order-app/issues"
+  },
+  "homepage": "https://github.com/lukewalt/order-app#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "pug": "^2.0.0-beta11"
+  }
+}
