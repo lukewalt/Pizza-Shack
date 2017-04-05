@@ -3,7 +3,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'inclass_knex_db'
+      database: 'pizza_shack'
     },
     pool: {
       min: 2,
@@ -17,7 +17,9 @@ module.exports = {
   staging: {
     client: 'postgresql',
     connection: {
-      database: 'inclass_knex_db'
+      database: 'pizza_shack',
+      user: 'username',
+      password: 'password'
     },
     pool: {
       min: 2,
@@ -31,7 +33,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'inclass_knex_db'
+      database: 'pizza_shack'
     },
     pool: {
       min: 2,
