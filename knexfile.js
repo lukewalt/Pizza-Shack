@@ -5,12 +5,11 @@ module.exports = {
     connection: {
       database: 'pizza_shack'
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
-      tableName: 'knex_migrations'
+      directory: __dirname + '/db/migrations'
+    },
+    seeds: {
+      directory: __dirname + '/db/seeds'
     }
   },
 
@@ -33,7 +32,9 @@ module.exports = {
   production: {
     client: 'postgresql',
     connection: {
-      database: 'pizza_shack'
+     database: 'pizza_shack',
+     user:     'username',
+     password: 'password'
     },
     pool: {
       min: 2,
