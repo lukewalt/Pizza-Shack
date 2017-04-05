@@ -3,8 +3,20 @@ body {
   text-align: center;
   height: 1000px;
   color: white;
-  font-family: 'Fascinate Inline', cursive;
+  font-family: 'Fascinate Inline', sans;
 
+}
+
+li a {
+  color: white;
+}
+
+.navbar-inverse {
+  background-color: #ffce84;
+}
+
+.welcome {
+  margin-top: 20%;
 }
 
 .welcome__text > h1 {
@@ -16,9 +28,18 @@ body {
   height: 300px;
 }
 
+.four-o-four {
+  height: 100px;
+}
 
 @media (max-width: 600px) {
   .pizza__img {
     height: 200px;
+  }
+}
+
+@media (min-width: 980px) {
+  .welcome {
+    margin-top: 15%;
   }
 }
