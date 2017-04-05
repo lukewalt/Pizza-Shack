@@ -1,0 +1,18 @@
+extends partials/layout.pug
+
+block content
+  .heading
+    h1 Login
+    if msg 
+      h2= msg 
+  .login_form
+    form(method="POST")
+    .form-group
+      label(for="email") Email
+      input.form-control#email(type='email' name='email' placeholder='johnny@dude.com' required)
+    .form-group
+      label(for="password") Password
+      input.form-control#password(type='password' name='password' placeholder='johnny@dude.com' required)
+    .contact-form__submit
+      a.btn.btn-danger.btn-lg('/') Cancel
+      input.btn.btn-success.btn-lg(type='submit' value='Submit')

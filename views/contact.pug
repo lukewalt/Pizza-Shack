@@ -1,0 +1,21 @@
+extends partials/layout.pug
+
+block content
+  h1 Contact Us
+    .contact-form
+      form(method="POST")
+        .form-group
+          label(for='name') name
+          input.form-control#name(type="text" name="name" placeholder="Johnny")
+        .form-group
+          label(for='email') Email
+          input.form-control#email(type="email" name="email" placeholder="johnny@dude.com")
+        .form-group
+          label(for='phone') Phone
+          input.form-control#phone(type="tel" name="phone" placeholder="555-555-5555")
+        .form-group
+          label(for='message') Message
+          textarea.form-control#message(type="text" name="message" rows=5 placeholder="What is the secret ingredient?")
+        .contact-form__submit
+          a.btn.btn-danger.btn-lg(href="/") Cancel
+          input.btn.btn-success.btn-lg(type="submit" value="Submit")

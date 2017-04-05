@@ -1,0 +1,62 @@
+extends partials/layout.pug
+
+block content 
+  if errors
+    h1 = err.message
+  .heading
+    h1 Order
+  .order-form
+    form(method="POST")
+      .form-group()
+        //- class={'has-error': errors.name}
+        label.control-label(for='name') name
+        input.form-control#name(
+          type='text'
+          name='name'
+          placeholder='jan do'
+          value=body.name
+          required
+          )
+        //- if errors.name
+        //-   span.help-block= errors.name.message
+      .form-group()
+        //- class={'has-error': errors.phone}
+        label.control-label(for='phone') phone
+        input.form-control#phone(
+          type='text'
+          name='phone'
+          placeholder='555-555-1234'
+          value=body.phone
+          required
+          )
+        //- if errors.phone
+        //-   span.help-block= errors.phone.message
+      .form-group()
+        //- class={'has-error': errors.size}
+        label.control-label(for='size') Size
+        select.form-control#size(name='size' required)
+          
+          option(disable selected) Select a size:
+          each size in sizes
+            option(
+              value=size.inches
+              selected=(+body.size === +size.inches)
+            ) #{size.name}: #{size.inches}
+        //- if errors.size
+        //-   span.help-block= errors.size.message
+      #toppings()
+        //- class={'has-error': errors.toppings}
+        h5 Toppings
+        each topping in toppings
+          label= topping.name
+              input(
+                type='checkbox'
+                name='toppings'
+                value=topping.name
+                selected=(body.toppings && body.toppings.inclucdes(topping.name))
+              )
+        //- if errors.toppings
+        //-   span.help-block= errors.toppings.message
+      .order-form__submit
+        a.btn.btn--danger.btn-lg(href='/') Cancel
+        input.btn.btn-success.btn-lg(type='submit' value='ORDER')
