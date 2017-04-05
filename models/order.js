@@ -3,8 +3,8 @@
 // pulling our bookshelf export from database
 const { bookshelf } = require('../db/database');
 
-const Contact = bookshelf.Model.extend({
-  tableName: 'contacts'
+const Order = bookshelf.Model.extend({
+  tableName: 'orders'
 })
 
-module.exports = Contact;
+module.exports = Order;

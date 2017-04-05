@@ -6,7 +6,7 @@ const router = Router();
 
 //public routes; anyone can visit login or not
 router.use(require('./about'))
-// router.use(require('./contact'))
+router.use(require('./contact'))
 // router.use(require('./login'))
 // router.use(require('./register'))
 router.use(require('./root'))
@@ -23,7 +23,7 @@ router.use(require('./root'))
 
 //private Routes
 // router.use(require('./logout'))
-// router.use(require('./order'))
+router.use(require('./orders'))
 
 
 module.exports = router
