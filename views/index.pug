@@ -3,6 +3,8 @@ extends partials/layout.pug
 block content 
   .welcome
     .welcome__text
+      if orderMsg
+        h1= messages.orderMsg
       h1 Pizza Shack
       h4= body.slogan
     .welcome__img

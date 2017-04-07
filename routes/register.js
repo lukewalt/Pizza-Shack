@@ -1,10 +1,11 @@
 'use strict';
 
 const { Router } = require('express');
-
 const router = Router();
-const { show } = require('../controllers/aboutCtrl')
 
-router.get('/register', show);
+const user = require('../controllers/userCtrl');
+
+router.get('/register', user.show);
+router.post('/register', user.create)
 
 module.exports = router

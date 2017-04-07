@@ -30,18 +30,21 @@ module.exports.show = (req, res, err) =>
 
 
 // definition create order to use in model
-module.exports.create = ({ body, flash }, res, err) => {
+module.exports.create = (req, res, err) => {
+  // saves copy of re.body.toppings
+  const toppings = req.body.toppings
+  req.body.toppings = typeof(toppings) === 'string' ? [toppings] : toppings
   //instanciate order model to make order
-  Order.forge(body)
+  Order.forge(req.body)
   //save it to database
   .save()
   .then((orderObj) => {
-    req.flash('orderMsg', { orderMsg: "Thanks for your order" });
+    req.flash('orderMsg', { orderMsg: "Thanks for your order!" });
     res.redirect('/')
   })
-  .catch(({ errors }) => {
+  .catch( err  => {
     Promise.all([
-      Promise.resolve(errors),
+      Promise.resolve(err),
       getSizes(),
       getToppings()
     ])
