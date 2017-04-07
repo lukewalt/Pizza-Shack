@@ -31,6 +31,9 @@ module.exports.show = (req, res, err) =>
 
 // definition create order to use in model
 module.exports.create = (req, res, err) => {
+  // saves copy of re.body.toppings
+  const toppings = req.body.toppings
+  req.body.toppings = typeof(toppings) === 'string' ? [toppings] : toppings
   //instanciate order model to make order
   Order.forge(req.body)
   //save it to database
