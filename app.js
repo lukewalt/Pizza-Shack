@@ -17,8 +17,8 @@ const routes = require('./routes/');
 // configure pug our view engine
 app.set('view engine', 'pug')
 
-app.locals.errors = {};
 app.locals.company = '🍕 Pizza Shack';
+app.locals.errors = {};
 app.locals.body = {}
 app.locals.body.slogan = "We know how to make that pie right!"
 
