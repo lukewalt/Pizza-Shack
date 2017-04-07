@@ -16,8 +16,8 @@ li a {
   background-color: #ffce84;
 }
 
-.welcome {
-  margin-top: 20%;
+.main-display {
+  margin-top: 13%;
 }
 
 .welcome__text > h1 {
@@ -33,6 +33,10 @@ li a {
   height: 100px;
 }
 
+.contact-form {
+  font-size: .5em;
+}
+
 @media (max-width: 600px) {
   .pizza__img {
     height: 200px;
@@ -40,7 +44,5 @@ li a {
 }
 
 @media (min-width: 980px) {
-  .welcome {
-    margin-top: 15%;
-  }
+
 }

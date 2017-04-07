@@ -30,21 +30,25 @@ module.exports.show = (req, res, err) =>
 
 
 // definition create order to use in model
-module.exports.create = ({ body }, res, err) =>
+module.exports.create = ({ body, flash }, res, err) => {
   //instanciate order model to make order
   Order.forge(body)
   //save it to database
   .save()
-  .then(( orderObj) => res.render('index', { orderMsg: "Thanks for your order" }))
-  .catch(({ errors }) =>
+  .then((orderObj) => {
+    req.flash('orderMsg', { orderMsg: "Thanks for your order" });
+    res.redirect('/')
+  })
+  .catch(({ errors }) => {
     Promise.all([
       Promise.resolve(errors),
       getSizes(),
       getToppings()
     ])
-  )
-  .then(([errors, sizes, toppings]) =>
-    //resolves all the promises
-    res.render('order', { page: 'Order', sizes, toppings, errors, body})
-  )
+    .then(([errors, sizes, toppings]) =>
+      //resolves all the promises
+      res.render('order', { page: 'Order', sizes, toppings, errors, body})
+    )
+  })
   .catch(err)
+}

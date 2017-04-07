@@ -1,62 +1,59 @@
 extends partials/layout.pug
 
-block content 
-  if errors
-    h1 = err.message
+block content
+  if errors.column
+    h3 Sorry, there was a problem with the #{errors.column} field. Please try again.
   .heading
     h1 Order
   .order-form
     form(method="POST")
-      .form-group()
-        //- class={'has-error': errors.name}
-        label.control-label(for='name') name
+      //- We don't have to check for whether errors exists because we added an empty 'errors' obj to 'locals' in app.js
+      .form-group(class={'has-error': errors.column ==="name"})
+        label.control-label(for='name') Name
         input.form-control#name(
           type='text'
           name='name'
-          placeholder='jan do'
+          placeholder='Jane Doe'
           value=body.name
           required
-          )
-        //- if errors.name
-        //-   span.help-block= errors.name.message
-      .form-group()
-        //- class={'has-error': errors.phone}
-        label.control-label(for='phone') phone
+        )
+      .form-group(class={'has-error': errors.column === "email"})
+        label.control-label(for='email') Email Address
+        input.form-control#email(
+          type='email'
+          name='email'
+          placeholder='you@example.com'
+          value=email
+          required
+        )
+      .form-group(class={'has-error': errors.column === "phone"})
+        label.control-label(for='phone') Phone Number
         input.form-control#phone(
-          type='text'
+          type='tel'
           name='phone'
-          placeholder='555-555-1234'
+          placeholder='555-124-1234'
           value=body.phone
           required
-          )
-        //- if errors.phone
-        //-   span.help-block= errors.phone.message
-      .form-group()
-        //- class={'has-error': errors.size}
+        )
+      .form-group(class={'has-error': errors.column === "size"})
         label.control-label(for='size') Size
         select.form-control#size(name='size' required)
-          
-          option(disable selected) Select a size:
+          option(disabled selected) Select a size:
           each size in sizes
             option(
               value=size.inches
               selected=(+body.size === +size.inches)
             ) #{size.name}: #{size.inches}
-        //- if errors.size
-        //-   span.help-block= errors.size.message
-      #toppings()
-        //- class={'has-error': errors.toppings}
+      #toppings
         h5 Toppings
         each topping in toppings
           label= topping.name
-              input(
-                type='checkbox'
-                name='toppings'
-                value=topping.name
-                selected=(body.toppings && body.toppings.inclucdes(topping.name))
-              )
-        //- if errors.toppings
-        //-   span.help-block= errors.toppings.message
+            input(
+              type='checkbox'
+              name='toppings'
+              value=topping.name
+              selected=(body.toppings && body.toppings.includes(topping.name))
+            )
       .order-form__submit
-        a.btn.btn--danger.btn-lg(href='/') Cancel
-        input.btn.btn-success.btn-lg(type='submit' value='ORDER')
+        a.btn.btn-danger.btn-lg(href='/') Cancel
+        input.btn.btn-success.btn-lg(type='submit' value='Order it!')
