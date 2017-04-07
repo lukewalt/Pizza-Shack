@@ -12,6 +12,10 @@ li a {
   color: white;
 }
 
+p {
+  font-family: sans-serif;
+}
+
 .navbar-inverse {
   background-color: #ffce84;
 }

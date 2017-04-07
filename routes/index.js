@@ -1,29 +1,28 @@
 'use strict';
 
 const { Router } = require('express');
-// instanciating our module from Routers that we will export
 const router = Router();
 
-//public routes; anyone can visit login or not
+// public routes
 router.use(require('./about'))
-// router.use(require('./contact'))
-// router.use(require('./login'))
-// router.use(require('./register'))
+router.use(require('./contact'))
+router.use(require('./orders'))
+router.use(require('./login'))
+router.use(require('./logout'))
+router.use(require('./register'))
 router.use(require('./root'))
 
-// login guard MIDDLEWARE. send back home if not register
+// login guard middleware. Send 'em back home if not registered
+// TODO: define isAuthenticated
 // router.use( (req, res, next) => {
-//   // defined
 //   if (req.isAuthenticated()) {
-//     next()
+//     next();
 //   } else {
-//     res.redirect('./login')
+//     res.redirect('/login')
 //   }
-// })
+// });
 
-//private Routes
+// private routes
 // router.use(require('./logout'))
-// router.use(require('./order'))
 
-
-module.exports = router
+module.exports = router;
