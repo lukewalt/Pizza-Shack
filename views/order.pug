@@ -5,10 +5,10 @@ block content
     h3 Sorry, there was a problem with the #{errors.column} field. Please try again.
   .heading
     h1 Order
-  .order-form
+  .order-form.row
     form(method="POST")
       //- We don't have to check for whether errors exists because we added an empty 'errors' obj to 'locals' in app.js
-      .form-group(class={'has-error': errors.column ==="name"})
+      .form-group.col-sm-6(class={'has-error': errors.column ==="name"})
         label.control-label(for='name') Name
         input.form-control#name(
           type='text'
@@ -17,7 +17,7 @@ block content
           value=body.name
           required
         )
-      .form-group(class={'has-error': errors.column === "email"})
+      .form-group.col-sm-6(class={'has-error': errors.column === "email"})
         label.control-label(for='email') Email Address
         input.form-control#email(
           type='email'
@@ -26,7 +26,7 @@ block content
           value=email
           required
         )
-      .form-group(class={'has-error': errors.column === "phone"})
+      .form-group.col-sm-6(class={'has-error': errors.column === "phone"})
         label.control-label(for='phone') Phone Number
         input.form-control#phone(
           type='tel'
@@ -35,7 +35,7 @@ block content
           value=body.phone
           required
         )
-      .form-group(class={'has-error': errors.column === "size"})
+      .form-group.col-sm-6(class={'has-error': errors.column === "size"})
         label.control-label(for='size') Size
         select.form-control#size(name='size' required)
           option(disabled selected) Select a size:
@@ -45,7 +45,7 @@ block content
               selected=(+body.size === +size.inches)
             ) #{size.name}: #{size.inches}
       #toppings
-        h5 Toppings
+        h4.sub-head Toppings
         each topping in toppings
           label= topping.name
             input(
@@ -55,5 +55,5 @@ block content
               selected=(body.toppings && body.toppings.includes(topping.name))
             )
       .order-form__submit
-        a.btn.btn-danger.btn-lg(href='/') Cancel
-        input.btn.btn-success.btn-lg(type='submit' value='Order it!')
+        a.btn.btn-one.btn-lg(href='/') Cancel
+        input.btn.btn-one.btn-lg(type='submit' value='Order it!')

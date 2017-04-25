@@ -7,9 +7,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const flash = require('express-flash');
 const session = require('express-session');
+const KnexSessionStore = require('connect-session-knex')(session);
 
 const passport = require('passport');
-const KnexSessionStore = require('connect-session-knex')(session);
 const { knex } = require('./db/database');
 
 const routes = require('./routes/');
@@ -28,21 +28,27 @@ app.use(cookieParser('secretpizza'));
 app.use(session({ cookie: { maxAge: 60000 }, secret: 'secretpizza', resave: true, saveUninitialized: false }));
 app.use(flash());
 app.use(bodyParser.urlencoded({extended: false}))
+// instanciates session object and stores it in DB
+////confi obj () inside of config obj
 app.use(session({
   store: new KnexSessionStore({
     knex,
     tablename: 'sessions'
   }),
+  //if page refresh dont save session
   resave: false,
   saveUninitialized: false,
   secret: process.env.SESSION_SECRET || 'pizzashacksupersecret'
 }))
 
+//// Passport Middleware
+// will use session store in req.user to find if they exist and if pw is correct
+// incorperates passport Middleware from modular file
 require('./lib/passport-strategies')
 app.use(passport.initialize())
 app.use(passport.session())
 
-// set boolean to email which will correlate to pug template
+// invokes anonymous function in middleware process set boolean to email which will correlate to pug template
 app.use( (req, res, next) => {
   app.locals.email = req.user && req.user.email
   next()

@@ -3,10 +3,18 @@ body {
   text-align: center;
   height: 1000px;
   color: white;
-  font-family: 'Fascinate Inline', sans;
+  font-family: 'Fascinate Inline', sans-serif;
   letter-spacing: 1.7px;
 
 }
+
+.sub-head {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 0 2% 0;
+  font-family: 'Fascinate Inline', sans-serif;
+}
+
 
 li a {
   color: white;
@@ -16,16 +24,31 @@ p {
   font-family: sans-serif;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+
 .navbar-inverse {
   background-color: #ffce84;
+  border-color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: white;
+  color: #ff844c;
 }
 
 .main-display {
   margin-top: 13%;
+  padding: 0 10%;
 }
 
 .welcome__text > h1 {
-  font-size: 4em;
+  font-size: 5em;
 }
 
 .pizza__img {
@@ -40,6 +63,32 @@ p {
 .contact-form {
   font-size: .5em;
 }
+
+.form-group > .form-control {
+  font-family: sans-serif;
+}
+
+.btn-one {
+  background-color: #fff;
+  color: #ff844c;
+  margin: 1%;
+}
+
+
+#toppings {
+  /*background-color: #fff;*/
+  color: #fff;
+  font-family: sans-serif;
+  margin: 5% 0;
+  padding: 3%;
+  text-align: left;
+  font-weight: normal;
+}
+
+#toppings > label {
+  margin: 0 2%;
+}
+
 
 @media (max-width: 600px) {
   .pizza__img {
