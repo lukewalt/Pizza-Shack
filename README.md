@@ -1,8 +1,10 @@
 # order-app
 
-Pizza Ordering App is using PostreSQL, Express, Knex, Bookshelf, and Pug Templating [ all the views are rendered server-side ]
+Pizza Ordering App is using PostreSQL, Express, Express-session to persist data across session, Knex, Bookshelf, and Pug Templating [ all the views are rendered server-side ]
 
-Users are authenticated with Passport and bcrypt hashes/un-hashes passwords to and from the database.
+Users are authenticated with Passport and bcrypt which hashes/un-hashes passwords to and from the database.
+
+Once authenticated, a user can place a pizza order to their liking!
 
 <p align="center">
   <img src="./public/img/homepage.png" width="600"/><br>
