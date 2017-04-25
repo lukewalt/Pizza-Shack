@@ -4,4 +4,8 @@ Pizza Ordering App is using PostreSQL, Express, Knex, Bookshelf, and Pug Templat
 
 Users are authenticated with Passport and bcrypt hashes/un-hashes passwords to and from the database.
 
-[alt text](./public/img/homepage.png)
+<p align="center">
+  <img src="./public/img/homepage.png" width="350"/>
+  <img src="public/img/pageone.png" width="350"/>
+  <img src="public/img/pagetwo.png" width="350"/>
+</p>
