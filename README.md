@@ -7,5 +7,5 @@ Users are authenticated with Passport and bcrypt hashes/un-hashes passwords to a
 <p align="center">
   <img src="./public/img/homepage.png" width="600"/><br>
   <img align="left" src="public/img/pageone.png" width="350"/>
-  <img align="right" src="public/img/pagetwo.png" width="250"/>
+  <img src="public/img/pagetwo.png" width="250"/>
 </p>
