@@ -21,7 +21,7 @@ li a {
 }
 
 p {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -65,7 +65,7 @@ p {
 }
 
 .form-group > .form-control {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-one {
@@ -78,7 +78,7 @@ p {
 #toppings {
   /*background-color: #fff;*/
   color: #fff;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 5% 0;
   padding: 3%;
   text-align: left;
