@@ -8,6 +8,9 @@
     "start": "nodemon ./app.js",
     "deploy": "git push heroku master"
   },
+  "engines": {
+    "node": "7.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lukewalt/order-app.git"
