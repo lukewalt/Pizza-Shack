@@ -8,7 +8,7 @@ const Topping = () => knex('toppings')
 
 const getToppings = () =>
   Topping().select()
-  .then((rows) => rows )
+  .then(rows => rows )
   .catch( error => {
     throw error
   });
@@ -16,7 +16,7 @@ const getToppings = () =>
 
 const getSizes = () =>
   Size().select()
-  .then((rows) => rows )
+  .then(rows => rows )
   .catch( error => {
     throw error
   });

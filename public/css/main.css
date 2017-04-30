@@ -89,6 +89,10 @@ p {
   margin: 0 2%;
 }
 
+.loggedIn {
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 @media (max-width: 600px) {
   .pizza__img {
