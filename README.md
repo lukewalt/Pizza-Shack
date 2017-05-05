@@ -12,7 +12,7 @@ Once authenticated, a user can place a pizza order to their liking!
   <img src="public/img/pagetwo.png" width="250"/>
 </p>
 
-#Get Started
+# Get Started
 - go to register page
 - register your credentials
 - navigate to login and login
