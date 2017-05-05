@@ -11,3 +11,13 @@ Once authenticated, a user can place a pizza order to their liking!
   <img src="public/img/pageone.png" width="350"/>
   <img src="public/img/pagetwo.png" width="250"/>
 </p>
+
+#Get Started
+- go to register page
+- register your credentials
+- navigate to login and login
+- go to orders tab and input your order
+
+https://pizza-shack-lw.herokuapp.com/
+
+
