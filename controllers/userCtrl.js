@@ -20,10 +20,10 @@ module.exports.create = ({ body: {email, password, confirmation } }, res) => {
         .save()
         .then( () => {  res.redirect('/') })
         //catch for the save
-        .catch( (err) => { res.render('register', { msg: 'Dang these was a problem try again'}) } )
+        .catch( (err) => { res.render('register', { msg: 'there was a problem try again'}) } )
     })
     // catch for findOneByEmail
-    .catch( (err) => { res.render('register', { msg: 'Dang these was a problem try again'}) } )
+    .catch( (err) => { res.render('register', { msg: 'there was a problem try again'}) } )
 
 
   } else {
