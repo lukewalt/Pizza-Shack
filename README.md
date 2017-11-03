@@ -1,6 +1,6 @@
-# order-app
+# Pizza Shack
 
-Pizza Ordering App is using PostreSQL, Express, Express-session to persist data across session, Knex, Bookshelf, and Pug Templating [ all the views are rendered server-side ]
+Pizza Shack is using PostreSQL, Express, Express-session to persist data across session, Knex, Bookshelf, and Pug Templating [ all the views are rendered server-side ]
 
 Users are authenticated with Passport and bcrypt which hashes/un-hashes passwords to and from the database.
 
